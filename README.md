@@ -29,5 +29,5 @@ $ python3 baiskoafuDown.py
 ```sh
 $ python3 baiskoafuDown.py "name of a song or movie"
 ```
-#### Note
-This is an updated version of the script originally created by R00t173
+#### Note: This is an updated version of the script originally created by R00t173
+
