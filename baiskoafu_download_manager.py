@@ -169,16 +169,14 @@ def file_walker(path):
 def combine(file_name):
     file_list = file_walker(TS_PATH)
     
-    # Sort the file list based on numerical indices extracted from their names
     file_list.sort(key=lambda x: int(re.search(r'\d+', x).group()))
     
-    # Create a text file with all the .ts file paths
+    
     list_file_path = os.path.join(TEMP_DIR.name, "file_list.txt")
     with open(list_file_path, 'w') as list_file:
         for file_path in file_list:
             list_file.write(f"file '{file_path}'\n")
     
-    # Use ffmpeg to merge the .ts files into one
     output_path = os.path.join(OUT_PATH, file_name)
     ffmpeg_command = [
         'ffmpeg', '-f', 'concat', '-safe', '0', '-i', list_file_path,
@@ -191,7 +189,6 @@ def combine(file_name):
     input("")
 
 
-# Ensure ffmpeg is installed and in your PATH
 def check_ffmpeg():
     try:
         subprocess.run(['ffmpeg', '-version'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -200,5 +197,4 @@ def check_ffmpeg():
         print("ffmpeg is not installed or not found in PATH.")
         exit()
 
-# Call check_ffmpeg at the start of your script to ensure ffmpeg is available
 check_ffmpeg()
