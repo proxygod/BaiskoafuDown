@@ -20,6 +20,29 @@ This script requires Python 3.6 or later and the python3 requests module to work
 ```sh
 $ python3 -m pip install requests
 ```
+
+Additionally, you need to have ffmpeg installed on your system. You can install ffmpeg using the following commands:
+
+For Ubuntu/Debian:
+```sh
+$ sudo apt-get update
+$ sudo apt-get install ffmpeg
+```
+
+For CentOS/RHEL:
+```sh
+$ sudo yum install epel-release
+$ sudo yum install ffmpeg
+```
+
+For macOS with Homebrew:
+```sh
+$ brew install ffmpeg
+```
+
+For Windows:
+You can download ffmpeg from ffmpeg.org(https://ffmpeg.org) and add it to your system's PATH.
+
 ### Run program
 ```sh
 $ cd BaiskoafuDown
@@ -29,5 +52,5 @@ $ python3 baiskoafuDown.py
 ```sh
 $ python3 baiskoafuDown.py "name of a song or movie"
 ```
-#### Note: This is an updated version of the script originally created by R00t173
-
+# Note
+This is an updated version of the script originally created by R00t173
